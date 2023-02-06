@@ -1,0 +1,12 @@
+logging:
+  pattern:
+    level: "%5p [%X{traceId:-},%X{spanId:-},%X{TEST1:-}]"
+
+management:
+  tracing:
+    baggage:
+      remote-fields:
+        - TEST1
+      correlation:
+        fields:
+          - TEST1
