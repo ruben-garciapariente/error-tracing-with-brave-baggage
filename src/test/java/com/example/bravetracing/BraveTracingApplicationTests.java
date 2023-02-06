@@ -28,7 +28,8 @@ class BraveTracingApplicationTests {
 
 	@Test
 	void testCallable() throws Exception {
-		var result = mockMvc.perform(get("/callable"))
+		var result = mockMvc.perform(get("/callable")
+						.header("TEST1","test1"))
 				.andExpect(request().asyncStarted())
 				.andReturn();
 
